@@ -53,6 +53,23 @@
                 .slideshow img.active {
                     opacity: 1;
                 }
+        .card-container {
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .card {
+            border: 1px solid #000;
+            width: 200px;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+        }
+
+            .card img {
+                width: 100%;
+                height: auto;
+            }
     </style>
 </head>
 <body>
@@ -79,11 +96,32 @@
         // JavaScript for slideshow
         var images = Array.from(document.querySelectorAll('.slideshow img'));
         var currentImageIndex = 0;
-        setInterval(function() {
+        setInterval(function () {
             images[currentImageIndex].classList.remove('active');
             currentImageIndex = (currentImageIndex + 1) % images.length;
             images[currentImageIndex].classList.add('active');
         }, 3000);  // Change image every 3 seconds
     </script>
+
+    <div class="card-container">
+        <!-- Coffee Card -->
+        <div class="card">
+            <img src="https://i.imgur.com/6RPXknT.jpeg" alt="Coffee">
+            <h2>My Favorite Coffee Right Now</h2>
+            <p>Blue Hummingbird - Guatemala Acatenango. Gorgeous, juicy, acidic without being sour. Sustainably sourced, highly consistent roast. Give it a try for sure!</p>
+            <a href="https://bhbcoffee.com/collections/blue-hummingbird-coffee-collection/products/guatemala-acatenango-la-torre">Check it out!</a>
+        </div>
+
+        <!-- Book Card -->
+        <div class="card">
+            <img src="https://i.imgur.com/Y4ttss0.png" alt="Book">
+            <h2>My Favorite Book Right Now</h2>
+            <p>The Gender Book, second edition is a gorgeous and informative answer to just about every question you might have about sex and gender. It's empowering to me, 
+            revisiting my identity as an adult. I have always been cisgender, and of course this book did not change that. What it did do is validate that whisper inside that says 
+            that my identity should serve me, not the other way around. My identity, appearance, and role in society are not dictated by my genes or my genitals, and I am not fooled by politicians who 
+            try to turn freedom into a wedge issue.</p>
+            <a href="https://thegenderbook.com/the-gender-book/the-gender-book-pdf">Read it here</a>
+        </div>
+    </div>
 </body>
 </html>
